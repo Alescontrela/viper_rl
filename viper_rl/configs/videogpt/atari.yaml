@@ -1,0 +1,34 @@
+seed: 1234
+
+batch_size: 32
+lr: 1.e-4
+total_steps: 800000
+warmup_steps: 0
+save_interval: 10000
+test_interval: 10000
+viz_interval: 10000
+log_interval: 100
+data_path: "viper_rl_data/datasets/atari"
+
+ema: 0.9999
+optimizer: "adam"
+lr_schedule: "constant"
+
+image_size: 64
+seq_len: 4
+frame_skip: 4
+ae_ckpt: "viper_rl_data/checkpoints/atari_vqgan"
+
+n_classes: null
+class_cond: false
+
+model: "videogpt"
+transformer:
+  embed_dim: 512
+  num_heads: 8
+  num_layers: 8
+  mlp_dim: 2048
+  dropout: 0.
+  attention_dropout: 0.
+
+open_loop_ctx: 1
