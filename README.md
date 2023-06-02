@@ -2,7 +2,7 @@
 
 Code for VIPER (Video Predcition Rewards), a general algorithm which leverages video prediction models as priors for Reinforcement Learning.
 
-![VIPER Tasks](https://github.com/Alescontrela/VIPER/assets/13845012/f7f30610-4985-409e-bfe5-e82c125cca7a)
+<img src='https://github.com/Alescontrela/viper_rl/assets/13845012/b941627c-2ce1-49c3-9894-8d0b0e939462' width='100%'>
 
 If you found this code useful, please reference it in your paper:
 
@@ -24,7 +24,7 @@ For more information:
 
 VIPER leverages the next-frame log likelihoods of a pre-trained video prediction model as rewards for downstream reinforcement learning tasks. The method is flexible to the particular choice of video prediction model and reinforcement learning algorithm. The general method outline is shown below:
 
-![viper_method_figure](https://github.com/Alescontrela/VIPER/assets/13845012/5f258fce-8793-442c-9e80-3f0ebb4df741)
+<img src='https://github.com/Alescontrela/viper_rl/assets/13845012/ee402c86-152a-4cdc-b728-8120d4b574dd' width='75%'>
 
 This code release provides a reference VIPER implementation which uses [VideoGPT](https://arxiv.org/abs/2104.10157) as the video prediction model and [DreamerV3](https://arxiv.org/abs/2301.04104) as the reinforcement learning agorithm.
 
