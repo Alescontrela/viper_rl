@@ -55,6 +55,14 @@ class VideoGPT(nn.Module):
                 nll = nll.reshape(*nll.shape[:2], -1).sum(-1)
         return -nll
 
+    def log_prob(self, embeddings, encodings, label=None, training=False, reduce_sum=True):
+        logits = self(embeddings, label=label, training=training)
+        labels = jax.nn.one_hot(encodings, self.ae.n_embed)
+        nll = optax.softmax_cross_entropy(logits, labels)
+        if reduce_sum:
+            nll = nll.reshape(*nll.shape[:2], -1).sum(-1)
+        return -nll
+
     def loss(self, embeddings, encodings, label=None, training=True):
         loss = -self.log_prob(
             embeddings, encodings, label, training=training
